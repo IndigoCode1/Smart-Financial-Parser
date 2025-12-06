@@ -2,6 +2,7 @@ import pytest
 from datetime import date
 from src.normalization.dates import parse_date
 from src.normalization.amounts import parse_amount
+from src.normalization.merchants import parse_merchant
 
 class TestDates:
     def test_iso_format(self):
@@ -53,3 +54,27 @@ class TestAmounts:
         assert parse_amount("N/A") is None
         assert parse_amount("") is None
 
+class TestMerchants:
+    def test_basic_cleaning(self):
+        assert parse_merchant("  uber   ") == "UBER"
+
+    def test_exact_match(self):
+        assert parse_merchant("AMAZON") == "AMAZON"
+
+    def test_fuzzy_match_start(self):
+        assert parse_merchant("UBER *TRIP") == "UBER"
+
+    def test_fuzzy_match_contains(self):
+        assert parse_merchant("AMZN Mktp US") == "AMAZON"
+
+    def test_fuzzy_match_typo_ish(self):
+        assert parse_merchant("Uber Technologies") == "UBER"
+
+    def test_unicode_handling(self):
+        assert parse_merchant("Starbucks ☕️") == "STARBUCKS"
+
+    def test_unknown_merchant(self):
+        assert parse_merchant("Joe's Coffee") == "JOE'S COFFEE"
+
+    def test_empty_returns_unknown(self):
+        assert parse_merchant("") == "UNKNOWN"
