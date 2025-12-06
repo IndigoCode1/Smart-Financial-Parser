@@ -37,6 +37,9 @@ class TestAmounts:
     def test_comma_separator(self):
         assert parse_amount("1,000.00") == 1000.0
 
+    def test_extra_space(self):
+        assert parse_amount("1 000.00") == 1000.0
+
     def test_currency_text(self):
         assert parse_amount("50.00 USD") == 50.0
         assert parse_amount("USD 50.00") == 50.0
