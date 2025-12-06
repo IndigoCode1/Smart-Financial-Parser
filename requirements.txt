@@ -1,0 +1,4 @@
+faker
+python-dateutil
+pandas
+rapidfuzz
