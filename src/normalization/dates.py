@@ -14,7 +14,7 @@ def parse_date(date_str: str) -> Optional[date]:
     except (ValueError, TypeError, OverflowError):
         pass
 
-    # Handle any letters that parser doesn't like
+    # Handle any letters that the parser doesn't like
     try:
         cleaned_str = re.sub(r'(\d+)(st|nd|rd|th)', r'\1', date_str, flags=re.IGNORECASE)
         dt = dt = parser.parse(cleaned_str, fuzzy=True, dayfirst=False)
