@@ -12,15 +12,11 @@ def parse_amount(amount_str: str) -> Optional[float]:
         is_negative = True
         raw = raw[1:-1]
 
-    if raw.startswith('-'):
-        is_negative = True
-        raw = raw[1:]
-
-    cleaned_str = re.sub(r'[$,]|[a-zA-Z]+', '', raw)
+    cleaned_str = re.sub(r'[^\d\.\-]', '', raw, flags=re.IGNORECASE)
 
     try:
         val = float(cleaned_str.strip())
-        if is_negative:
+        if is_negative and val > 0:
             val = -val
         return val
     except (ValueError, AttributeError):
