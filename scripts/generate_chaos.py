@@ -3,6 +3,7 @@ import random
 from faker import Faker
 from datetime import date, timedelta
 from pathlib import Path
+from typing import List, Dict
 
 SEED_VALUE = 42
 NUM_FAKE_ROWS = 70
@@ -12,7 +13,7 @@ random.seed(SEED_VALUE)
 Faker.seed(SEED_VALUE)
 fake = Faker()
 
-def generate_faker_rows(num_rows):
+def generate_faker_rows(num_rows) -> List[Dict[str,str]]:
     rows = []
     static_merchants = ["STARBUCKS", "AMAZON *PRIME", "COSTCO WHSE", "SHELL OIL", "DIGITAL OCEAN INC", "LYFT RIDE"]
 
@@ -52,7 +53,7 @@ def generate_faker_rows(num_rows):
 
     return rows
 
-def get_edge_cases():
+def get_edge_cases() -> List[Dict[str,str]]:
     return[
         # Dates
         {'Trans Date': 'Sept. 3rd, 2024', 'Description': 'Google Play Store', 'Value': '$12.99'},
@@ -83,7 +84,7 @@ def get_edge_cases():
         {'Trans Date': '2025/12/10', 'Description': 'Christmas Shopping', 'Value': ''}, # Missing Value
     ]
 
-def create_chaos_file():
+def create_chaos_file() -> None:
     all_rows = generate_faker_rows(NUM_FAKE_ROWS) + get_edge_cases()
 
     OUTPUT_FILE.parent.mkdir(parents=True, exist_ok=True)
