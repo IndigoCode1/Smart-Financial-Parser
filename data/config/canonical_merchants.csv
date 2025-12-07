@@ -1,0 +1,555 @@
+canonical_name,category
+WALMART,Groceries
+COSTCO,Groceries
+TARGET,Groceries
+KROGER,Groceries
+ALBERTSONS,Groceries
+SAFEWAY,Groceries
+WHOLE FOODS,Groceries
+TRADER JOE'S,Groceries
+ALDI,Groceries
+LIDL,Groceries
+PUBLIX,Groceries
+H-E-B,Groceries
+MEIJER,Groceries
+WEGMANS,Groceries
+SPROUTS,Groceries
+SAM'S CLUB,Groceries
+BJ'S WHOLESALE CLUB,Groceries
+WINCO FOODS,Groceries
+HY-VEE,Groceries
+GIANT,Groceries
+GIANT EAGLE,Groceries
+STOP & SHOP,Groceries
+SHOPRITE,Groceries
+FOOD LION,Groceries
+DOLLAR GENERAL,Groceries
+BASHAS,Groceries
+FRED MEYER,Groceries
+RALPHS,Groceries
+KING SOOPERS,Groceries
+HARRIS TEETER,Groceries
+SAVE MART,Groceries
+SMART & FINAL,Groceries
+ACME,Groceries
+JEWEL-OSCO,Groceries
+SHAW'S,Groceries
+VONS,Groceries
+SAVE-A-LOT,Groceries
+PIGGLY WIGGLY,Groceries
+FOOD 4 LESS,Groceries
+HANNAFORD,Groceries
+TOPS FRIENDLY MARKETS,Groceries
+STATER BROS,Groceries
+RALEY'S,Groceries
+PRICE CHOPPER,Groceries
+MARKET BASKET,Groceries
+FAREWAY,Groceries
+WOODMAN'S MARKET,Groceries
+ROCHE BROS,Groceries
+FOOD CITY,Groceries
+INGLES,Groceries
+WINN-DIXIE,Groceries
+FRESH THYME,Groceries
+NATURAL GROCERS,Groceries
+NEW SEASONS MARKET,Groceries
+
+MCDONALD'S,Dining
+STARBUCKS,Dining
+CHICK-FIL-A,Dining
+TACO BELL,Dining
+DUNKIN',Dining
+BURGER KING,Dining
+SUBWAY,Dining
+DOMINO'S,Dining
+CHIPOTLE,Dining
+PIZZA HUT,Dining
+WENDY'S,Dining
+PANERA BREAD,Dining
+KFC,Dining
+POPEYES,Dining
+SONIC,Dining
+ARBY'S,Dining
+LITTLE CAESARS,Dining
+PANDA EXPRESS,Dining
+FIVE GUYS,Dining
+SHAKE SHACK,Dining
+IN-N-OUT,Dining
+IHOP,Dining
+DENNY'S,Dining
+WINGSTOP,Dining
+RAISING CANE'S,Dining
+WHATABURGER,Dining
+CULVER'S,Dining
+JACK IN THE BOX,Dining
+DEL TACO,Dining
+CARL'S JR.,Dining
+HARDEE'S,Dining
+JERSEY MIKE'S,Dining
+JIMMY JOHN'S,Dining
+DAIRY QUEEN,Dining
+SWEETGREEN,Dining
+ZAXBY'S,Dining
+BOJANGLES,Dining
+EL POLLO LOCO,Dining
+QDOBA,Dining
+MOE'S SOUTHWEST GRILL,Dining
+FIREHOUSE SUBS,Dining
+LONG JOHN SILVER'S,Dining
+TIM HORTONS,Dining
+BASKIN-ROBBINS,Dining
+AUNTIE ANNE'S,Dining
+CINNABON,Dining
+MCALISTER'S DELI,Dining
+SCHLOTZSKY'S,Dining
+BOSTON MARKET,Dining
+CHECKERS,Dining
+RALLY'S,Dining
+WHITE CASTLE,Dining
+KRYSTAL,Dining
+STEAK 'N SHAKE,Dining
+FREDDY'S,Dining
+PORTILLO'S,Dining
+POLLO TROPICAL,Dining
+TACO JOHN'S,Dining
+TACO BUENO,Dining
+FAZOLI'S,Dining
+NOODLES & COMPANY,Dining
+BOSTON PIZZA,Dining
+CALIFORNIA PIZZA KITCHEN,Dining
+DUTCH BROS,Dining
+PEET'S COFFEE,Dining
+CARIBOU COFFEE,Dining
+CAVA,Dining
+DAVE'S HOT CHICKEN,Dining
+
+SHELL,Gas
+EXXON,Gas
+MOBIL,Gas
+CHEVRON,Gas
+BP,Gas
+MARATHON,Gas
+SPEEDWAY,Gas
+CIRCLE K,Gas
+VALERO,Gas
+SUNOCO,Gas
+CITGO,Gas
+PHILLIPS 66,Gas
+CONOCO,Gas
+ARCO,Gas
+MURPHY USA,Gas
+WAWA,Gas
+SHEETZ,Gas
+CASEY'S,Gas
+QUIKTRIP,Gas
+RACETRAC,Gas
+LOVE'S,Gas
+PILOT FLYING J,Gas
+7-ELEVEN,Gas
+KWIK TRIP,Gas
+BUC-EE'S,Gas
+MAVERIK,Gas
+CUMBERLAND FARMS,Gas
+HOLIDAY,Gas
+THORNTONS,Gas
+GETGO,Gas
+STEWART'S SHOPS,Gas
+GPM INVESTMENTS,Gas
+EG AMERICA,Gas
+ALIMENTATION COUCHE-TARD,Gas
+ROYAL FARMS,Gas
+TURKEY HILL,Gas
+RUTTER'S,Gas
+SPINX,Gas
+YESWAY,Gas
+PARKER'S,Gas
+FAS MART,Gas
+ON THE RUN,Gas
+STRIPES,Gas
+LOAF 'N JUG,Gas
+TOM THUMB,Gas
+SINCLAIR,Gas
+GULF,Gas
+TEXACO,Gas
+ALLSUPS,Gas
+WALLY'S,Gas
+STUCKEY'S,Gas
+TA,Gas
+
+UBER,Transport
+LYFT,Transport
+PARKMOBILE,Transport
+SPOT HERO,Transport
+EZ PASS,Transport
+FASTRAK,Transport
+METRO TRANSIT,Transport
+MTA,Transport
+BART,Transport
+AMTRAK,Transport
+CURB,Transport
+VIA,Transport
+SEPTA,Transport
+CTA,Transport
+WMATA,Transport
+NJ TRANSIT,Transport
+LA METRO,Transport
+DELTA,Transport
+UNITED,Transport
+AMERICAN AIRLINES,Transport
+SOUTHWEST,Transport
+HERTZ,Transport
+ENTERPRISE,Transport
+AVIS,Transport
+CITI BIKE,Transport
+LIME,Transport
+BIRD,Transport
+PARKWHIZ,Transport
+SUNPASS,Transport
+IPASS,Transport
+BOLT,Transport
+INDRIVE,Transport
+DIDI,Transport
+OLA,Transport
+GRAB,Transport
+BLABLACAR,Transport
+GETT,Transport
+CABIFY,Transport
+TURO,Transport
+ZIPCAR,Transport
+GETAROUND,Transport
+SCOOT,Transport
+SPIN,Transport
+JUMP,Transport
+CAPITAL BIKESHARE,Transport
+DIVVY,Transport
+JETBLUE,Transport
+ALASKA AIRLINES,Transport
+SPIRIT,Transport
+FRONTIER,Transport
+ALLEGIANT,Transport
+BUDGET,Transport
+NATIONAL,Transport
+ALAMO,Transport
+THRIFTY,Transport
+DOLLAR,Transport
+MARTA,Transport
+DART,Transport
+RTD,Transport
+TRIMET,Transport
+SOUND TRANSIT,Transport
+CALTRAIN,Transport
+VTA,Transport
+PEACH PASS,Transport
+TXTAG,Transport
+PIKEPASS,Transport
+PASSPORT PARKING,Transport
+BESTPARKING,Transport
+
+AMAZON,Shopping
+HOME DEPOT,Shopping
+LOWE'S,Shopping
+BEST BUY,Shopping
+APPLE,Shopping
+MICROSOFT,Shopping
+IKEA,Shopping
+WAYFAIR,Shopping
+MACY'S,Shopping
+NORDSTROM,Shopping
+KOHL'S,Shopping
+T.J. MAXX,Shopping
+MARSHALLS,Shopping
+ROSS,Shopping
+BURLINGTON,Shopping
+SEPHORA,Shopping
+ULTA,Shopping
+NIKE,Shopping
+ADIDAS,Shopping
+LULULEMON,Shopping
+GAP,Shopping
+OLD NAVY,Shopping
+H&M,Shopping
+ZARA,Shopping
+UNIQLO,Shopping
+REI,Shopping
+DICK'S SPORTING GOODS,Shopping
+STAPLES,Shopping
+OFFICE DEPOT,Shopping
+ETSY,Shopping
+EBAY,Shopping
+CHEWY,Shopping
+PETCO,Shopping
+PETSMART,Shopping
+CVS,Shopping
+WALGREENS,Shopping
+DOLLAR TREE,Shopping
+FAMILY DOLLAR,Shopping
+BIG LOTS,Shopping
+FIVE BELOW,Shopping
+OLLIE'S BARGAIN OUTLET,Shopping
+AUTOZONE,Shopping
+O'REILLY AUTO PARTS,Shopping
+ADVANCE AUTO PARTS,Shopping
+TRACTOR SUPPLY,Shopping
+BED BATH & BEYOND,Shopping
+CRATE & BARREL,Shopping
+POTTERY BARN,Shopping
+WEST ELM,Shopping
+VICTORIA'S SECRET,Shopping
+BATH & BODY WORKS,Shopping
+FOOT LOCKER,Shopping
+UNDER ARMOUR,Shopping
+PUMA,Shopping
+COLUMBIA,Shopping
+PATAGONIA,Shopping
+THE NORTH FACE,Shopping
+JCPENNEY,Shopping
+BELK,Shopping
+DILLARD'S,Shopping
+NEIMAN MARCUS,Shopping
+SAKS FIFTH AVENUE,Shopping
+BLOOMINGDALE'S,Shopping
+ACADEMY SPORTS,Shopping
+BASS PRO SHOPS,Shopping
+CABELA'S,Shopping
+SCHEELS,Shopping
+AT HOME,Shopping
+HOBBY LOBBY,Shopping
+MICHAELS,Shopping
+JOANN,Shopping
+PARTY CITY,Shopping
+BOOKS-A-MILLION,Shopping
+BARNES & NOBLE,Shopping
+GAMESTOP,Shopping
+BUILD-A-BEAR,Shopping
+LEGO STORE,Shopping
+AMERICAN GIRL,Shopping
+HOT TOPIC,Shopping
+SPENCER'S,Shopping
+ZUMIEZ,Shopping
+PACSUN,Shopping
+AEROPOSTALE,Shopping
+AMERICAN EAGLE,Shopping
+ABERCROMBIE & FITCH,Shopping
+HOLLISTER,Shopping
+FOREVER 21,Shopping
+SHEIN,Shopping
+TEMU,Shopping
+ALIBABA,Shopping
+RITE AID,Shopping
+PEP BOYS,Shopping
+NAPA AUTO PARTS,Shopping
+MENARDS,Shopping
+ACE HARDWARE,Shopping
+TRUE VALUE,Shopping
+HARBOR FREIGHT,Shopping
+
+NETFLIX,Entertainment
+HULU,Entertainment
+DISNEY+,Entertainment
+MAX,Entertainment
+PEACOCK,Entertainment
+PARAMOUNT+,Entertainment
+APPLE TV+,Entertainment
+YOUTUBE PREMIUM,Entertainment
+YOUTUBE TV,Entertainment
+SPOTIFY,Entertainment
+APPLE MUSIC,Entertainment
+AMAZON MUSIC,Entertainment
+PANDORA,Entertainment
+CRUNCHYROLL,Entertainment
+AUDIBLE,Entertainment
+XBOX GAME PASS,Entertainment
+PLAYSTATION PLUS,Entertainment
+NINTENDO SWITCH ONLINE,Entertainment
+AMAZON PRIME VIDEO,Entertainment
+TIDAL,Entertainment
+SIRIUSXM,Entertainment
+FUBO TV,Entertainment
+SLING TV,Entertainment
+STARZ,Entertainment
+AMC+,Entertainment
+BRITBOX,Entertainment
+ACORN TV,Entertainment
+SHUDDER,Entertainment
+SHOWTIME,Entertainment
+ESPN+,Entertainment
+DAZN,Entertainment
+MLB.TV,Entertainment
+NFL+,Entertainment
+NBA LEAGUE PASS,Entertainment
+ROKU CHANNEL,Entertainment
+TUBI,Entertainment
+PLUTO TV,Entertainment
+FREEVEE,Entertainment
+VUDU,Entertainment
+KANOPY,Entertainment
+HOOPLA,Entertainment
+DEEZER,Entertainment
+SOUNDCLOUD,Entertainment
+BANDCAMP,Entertainment
+EPIC GAMES STORE,Entertainment
+STEAM,Entertainment
+EA PLAY,Entertainment
+UBISOFT+,Entertainment
+DIRECTV STREAM,Entertainment
+DISCOVERY+,Entertainment
+CRITERION CHANNEL,Entertainment
+
+AWS,Tech
+GOOGLE CLOUD,Tech
+AZURE,Tech
+DIGITALOCEAN,Tech
+DELL,Tech
+CLOUDFLARE,Tech
+HEROKU,Tech
+TWILIO,Tech
+GITHUB,Tech
+ADOBE,Tech
+MICROSOFT 365,Tech
+GOOGLE WORKSPACE,Tech
+ZOOM,Tech
+SLACK,Tech
+NOTION,Tech
+ATLASSIAN,Tech
+JIRA,Tech
+CONFLUENCE,Tech
+CANVA,Tech
+DROPBOX,Tech
+OKTA,Tech
+IBM,Tech
+SALESFORCE,Tech
+ORACLE,Tech
+SAP,Tech
+SERVICENOW,Tech
+WORKDAY,Tech
+HUBSPOT,Tech
+SHOPIFY,Tech
+STRIPE,Tech
+PAYPAL,Tech
+SQUARE,Tech
+INTUIT,Tech
+QUICKBOOKS,Tech
+AKAMAI,Tech
+ACCENTURE,Tech
+TATA CONSULTANCY SERVICES,Tech
+INFOSYS,Tech
+HCL TECHNOLOGIES,Tech
+NVIDIA,Tech
+ALPHABET,Tech
+META,Tech
+SAMSUNG,Tech
+AMD,Tech
+CISCO,Tech
+HP,Tech
+HEWLETT PACKARD ENTERPRISE,Tech
+VMWARE,Tech
+RED HAT,Tech
+SPLUNK,Tech
+PALO ALTO NETWORKS,Tech
+FORTINET,Tech
+CROWDSTRIKE,Tech
+ZSCALER,Tech
+DATADOG,Tech
+SNOWFLAKE,Tech
+MONGODB,Tech
+ASANA,Tech
+TRELLO,Tech
+MONDAY.COM,Tech
+AIRTABLE,Tech
+FIGMA,Tech
+MIRO,Tech
+GRAMMARLY,Tech
+EVERNOTE,Tech
+LASTPASS,Tech
+1PASSWORD,Tech
+NORTON,Tech
+MCAFEE,Tech
+BITDEFENDER,Tech
+TEXAS INSTRUMENTS,Tech
+BOX,Tech
+MOTOROLA SOLUTIONS,Tech
+DXC TECHNOLOGY,Tech
+ECI SOFTWARE,Tech
+
+PG&E,Utilities
+CON EDISON,Utilities
+DUKE ENERGY,Utilities
+SOUTHERN COMPANY,Utilities
+XCEL ENERGY,Utilities
+NEXTERA ENERGY,Utilities
+DOMINION ENERGY,Utilities
+EXELON,Utilities
+AMERICAN ELECTRIC POWER,Utilities
+CENTERPOINT ENERGY,Utilities
+ENTERGY,Utilities
+FIRSTENERGY,Utilities
+PSEG,Utilities
+EVERSOURCE ENERGY,Utilities
+DTE ENERGY,Utilities
+SEMPRA ENERGY,Utilities
+NATIONAL GRID,Utilities
+
+STATE FARM,Insurance
+GEICO,Insurance
+PROGRESSIVE,Insurance
+ALLSTATE,Insurance
+LIBERTY MUTUAL,Insurance
+FARMERS INSURANCE,Insurance
+NATIONWIDE,Insurance
+TRAVELERS,Insurance
+USAA,Insurance
+CHUBB,Insurance
+HARTFORD,Insurance
+AIG,Insurance
+
+PLANET FITNESS,Health
+LA FITNESS,Health
+ANYTIME FITNESS,Health
+EQUINOX,Health
+LIFETIME FITNESS,Health
+24 HOUR FITNESS,Health
+GOLD'S GYM,Health
+CRUNCH FITNESS,Health
+ORANGETHEORY FITNESS,Health
+PELOTON,Health
+TELADOC,Health
+CVS MINUTECLINIC,Health
+KAISER PERMANENTE,Health
+
+VERIZON,Telecom
+AT&T,Telecom
+T-MOBILE,Telecom
+COMCAST,Telecom
+SPECTRUM,Telecom
+COX COMMUNICATIONS,Telecom
+ALTICE USA,Telecom
+FRONTIER COMMUNICATIONS,Telecom
+CENTURYLINK,Telecom
+DISH NETWORK,Telecom
+
+CHASE,Finance
+BANK OF AMERICA,Finance
+WELLS FARGO,Finance
+CAPITAL ONE,Finance
+CITIBANK,Finance
+PNC,Finance
+US BANK,Finance
+TRUIST,Finance
+TD BANK,Finance
+VANGUARD,Finance
+FIDELITY,Finance
+CHARLES SCHWAB,Finance
+ROBINHOOD,Finance
+COINBASE,Finance
+
+COURSERA,Education
+BRILLANT,Education
+UDEMY,Education
+KHAN ACADEMY,Education
+DUOLINGO,Education
+SKILLSHARE,Education
+MASTERCLASS,Education
+LINKEDIN LEARNING,Education
+EDX,Education
+PLURALSIGHT,Education
+CODECADEMY,Education
