@@ -1,15 +1,17 @@
 import pandas as pd
 from src.pipeline import FinancialPipeline
-from scripts.generate_chaos import create_chaos_file
 from pathlib import Path
+from shutil import copyfile
 
 INPUT_FILE = Path("data/raw/generated_transactions.csv")
 EXPECTED_FILE = Path("data/raw/clean_transactions.csv")
-OUTPUT_FILE = Path("data/processed/normalized_data.csv")
 
 def test_pipeline_integration(tmpdir):
-    create_chaos_file()
+    temp_input_path = Path(tmpdir) / "test_input.csv"
     temp_output_path = Path(tmpdir) / "test_output.csv"
+
+    copyfile(INPUT_FILE, temp_input_path)
+
     pipeline = FinancialPipeline(
         input_path=str(INPUT_FILE),
         output_path=str(temp_output_path)
