@@ -18,7 +18,7 @@ def generate_faker_rows(num_rows) -> List[Dict[str,str]]:
     static_merchants = ["STARBUCKS", "AMAZON *PRIME", "COSTCO WHSE", "SHELL OIL", "DIGITAL OCEAN INC", "LYFT RIDE"]
 
     for i in range(num_rows):
-        txn_date = date.today() - timedelta(days=random.randint(1, 365))
+        txn_date = date(2025, 12, 6) - timedelta(days=random.randint(1, 365))
         date_format = random.choice([txn_date.strftime("%Y-%m-%d"), 
                                      txn_date.strftime("%m/%d/%y"), 
                                      txn_date.strftime("%b %d, %Y"), 
