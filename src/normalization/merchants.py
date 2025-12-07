@@ -7,11 +7,15 @@ from rapidfuzz import process, fuzz
 BASE_DIR = Path(__file__).resolve().parents[2]
 MERCHANT_FILE = BASE_DIR / Path("data/config/canonical_merchants.csv")
 
+# Module-level caches avoid re-reading config on every row
 _CANONICAL_NAMES = []
 _CATEGORY_MAP = {}
 _TICKER_ALIASES = {}
 
 def load_merchant_db():
+    '''
+    Lazy-load canonical merchant names, categories, and optional ticker aliases from config CSV.
+    '''
     if _CANONICAL_NAMES:
         return
     
@@ -29,6 +33,8 @@ def load_merchant_db():
 
                 _CANONICAL_NAMES.append(name)
                 _CATEGORY_MAP[name] = category
+                
+                # Only swaps when ticker appears as the first token
                 if ticker:
                     _TICKER_ALIASES[ticker] = name
     except Exception as e:
@@ -36,6 +42,9 @@ def load_merchant_db():
         pass
 
 def clean_merchant_name(raw: str) -> str:
+    '''
+    Standardize merchant text by removing corporate suffixes/noise and normalizing separators.
+    '''
     s = raw.upper().strip()
 
     for separator in ['*', '.', '_']:
@@ -54,6 +63,9 @@ def clean_merchant_name(raw: str) -> str:
     return " ".join(s.split())
 
 def parse_merchant(raw_merchant: str) -> str:
+    '''
+    Canonicalize a raw merchant using cleaning, optional ticker alias expansion, exact match, then fuzzy match.
+    '''
     if not raw_merchant or not isinstance(raw_merchant, str):
         return "UNKNOWN"
     
@@ -90,5 +102,8 @@ def parse_merchant(raw_merchant: str) -> str:
     return cleaned_input
 
 def get_category_map() -> Dict[str, str]:
+    '''
+    Expose canonical merchant-to-category mapping for the category assignment stage.
+    '''
     load_merchant_db()
     return _CATEGORY_MAP

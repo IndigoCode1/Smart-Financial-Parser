@@ -4,6 +4,9 @@ import re
 from dateutil import parser
 
 def parse_date(date_str: str) -> Optional[date]:
+    '''
+    Parse messy human date strings into a date using dateutil; retry after removing ordinal suffixes.
+    '''
     if not date_str:
         return None
     

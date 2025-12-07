@@ -7,6 +7,7 @@ INPUT_FILE = Path("data/raw/generated_transactions.csv")
 EXPECTED_FILE = Path("data/raw/clean_transactions.csv")
 
 def test_pipeline_integration(tmpdir):
+    # Use temp_path to ensure the test is fully isolated.
     temp_input_path = Path(tmpdir) / "test_input.csv"
     temp_output_path = Path(tmpdir) / "test_output.csv"
 

@@ -10,7 +10,10 @@ DEFAULT_CATEGORY = "Miscellaneous"
 
 _KEYWORD_RULES = {}
 
-def load_keywords():
+def load_keywords() -> None:
+    '''
+    Load keyword-to-category rules from config; supports multiple keywords per row separated by ‘/’.
+    '''
     if _KEYWORD_RULES:
         return
     
@@ -33,6 +36,9 @@ def load_keywords():
         print(f"Error reading keywords CSV: {e}")
 
 def assign_category(merchant_name: str) -> str:
+    '''
+    Waterfall classifier: canonical merchant category → keyword match → default.
+    '''
     if not merchant_name:
         return DEFAULT_CATEGORY
     
@@ -45,6 +51,7 @@ def assign_category(merchant_name: str) -> str:
     
     for keyword, category in _KEYWORD_RULES.items():
         if keyword in clean_name:
+            # Boundary regex is used to reduce false positives on short keywords
             pattern = r'\b' + re.escape(keyword) + r'\b'
 
             if re.search(pattern, clean_name):

@@ -14,10 +14,14 @@ Faker.seed(SEED_VALUE)
 fake = Faker()
 
 def generate_faker_rows(num_rows) -> List[Dict[str,str]]:
+    '''
+    Create a randomized but seeded set of intentionally inconsistent transactions.
+    '''
     rows = []
     static_merchants = ["STARBUCKS", "AMAZON *PRIME", "COSTCO WHSE", "SHELL OIL", "DIGITAL OCEAN INC", "LYFT RIDE"]
 
     for i in range(num_rows):
+        # Anchor around a known date to keep test data deterministic
         txn_date = date(2025, 12, 6) - timedelta(days=random.randint(1, 365))
         date_format = random.choice([txn_date.strftime("%Y-%m-%d"), 
                                      txn_date.strftime("%m/%d/%y"), 
@@ -54,6 +58,9 @@ def generate_faker_rows(num_rows) -> List[Dict[str,str]]:
     return rows
 
 def get_edge_cases() -> List[Dict[str,str]]:
+    '''
+    Hard-coded edge rows to prove the normalizers handle real-world weirdness.
+    '''
     return[
         # Dates
         {'Trans Date': 'Sept. 3rd, 2024', 'Description': 'Google Play Store', 'Value': '$12.99'},
@@ -85,6 +92,9 @@ def get_edge_cases() -> List[Dict[str,str]]:
     ]
 
 def create_chaos_file() -> None:
+    '''
+    Write the combined synthetic dataset to the raw data folder.
+    '''
     all_rows = generate_faker_rows(NUM_FAKE_ROWS) + get_edge_cases()
 
     OUTPUT_FILE.parent.mkdir(parents=True, exist_ok=True)

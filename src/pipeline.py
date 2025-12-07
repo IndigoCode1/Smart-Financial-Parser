@@ -9,7 +9,14 @@ from src.normalization.merchants import parse_merchant
 from src.normalization.categories import assign_category
 
 class FinancialPipeline:
+    '''
+    Orchestrates loading, normalization, error capture, and summary reporting for transaction CSVs
+    '''
+
     def __init__(self, input_path: str, output_path: str) -> None:
+        '''
+        Initialize paths and stats; report and error files are written alongside the output
+        '''
         self.input_path = Path(input_path)
         self.output_path = Path(output_path)
         self.report_path = self.output_path.parent / "data_quality_report.txt"
@@ -24,6 +31,9 @@ class FinancialPipeline:
         }
 
     def load_data(self) -> pd.DataFrame:
+        '''
+        Read CSV as strings to avoid dtype surprises; replace NaNs with empty strings for safer parsing
+        '''
         if not self.input_path.exists():
             raise FileNotFoundError(f"Error: Input file not found at {self.input_path}")
         
@@ -34,7 +44,9 @@ class FinancialPipeline:
         return df
     
     def map_columns(self, df: pd.DataFrame) -> Dict[str, str]:
-        cols = [c.lower() for c in df.columns]
+        '''
+        Heuristically infer date/merchant/amount columns from flexible header names
+        '''
         mapping = {}
 
         date_candidates = ['date', 'dates', 'time', 'txn', 'timestamp', 'day']
@@ -63,6 +75,9 @@ class FinancialPipeline:
         return mapping
 
     def process_row(self, row:pd.Series, mapping: Dict[str, str]) -> Tuple[Optional[Dict], Optional[Dict]]:
+        '''
+        Normalize a single row; return either a standardized dict or an error record with reason
+        '''
         raw_date = row[mapping['date']]
         raw_merc = row[mapping['merchant']]
         raw_amt = row[mapping['amount']]
@@ -79,6 +94,7 @@ class FinancialPipeline:
             error_row['Error_Reason'] = f"Invalid Amount Format: '{raw_amt}'"
             return None, error_row
         
+        # Missing merchant currently normalizes to UNKNOWN because transaction is still valid
         clean_merchant = parse_merchant(raw_merc)
 
         category = assign_category(clean_merchant)
@@ -93,6 +109,9 @@ class FinancialPipeline:
         return success, None
         
     def generate_report(self, df: pd.DataFrame) -> None:
+        '''
+        Aggregate category spend and write a concise data-quality + spending summary.
+        '''
         if not df.empty:
             category_spend = df.groupby("Category")["Amount"].sum()
             if not category_spend.empty:
@@ -122,6 +141,9 @@ class FinancialPipeline:
         print(f"Report saved to {self.report_path}")
 
     def run(self) -> None:
+        '''
+        End-to-end workflow: load → map columns → normalize rows → write outputs → generate report
+        '''
         print("Starting Financial Parser")
 
         try:
@@ -153,6 +175,7 @@ class FinancialPipeline:
         if error_rows:
             error_df = pd.DataFrame(error_rows)
             error_df.to_csv(self.error_path, index=False)
+            # Despite .log extension, errors are stored in CSV for easy review
             print(f"{len(error_rows)} errors logged to {self.error_path}")
         else:
             print("No errors found!")
