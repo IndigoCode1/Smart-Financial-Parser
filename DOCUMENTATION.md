@@ -73,7 +73,7 @@ To ensure robustness, a "Chaos Generator" was built to create difficult test dat
 
 ---
 
-## 5. Verification & AI Usage Disclosure
+## 5. Verification & AI Implementation
 
 ### Verification Strategy
 * **Unit Testing (TDD):** Tests were written before and during development (`test_core.py`).
