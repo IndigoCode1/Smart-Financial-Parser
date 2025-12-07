@@ -13,7 +13,7 @@ def test_pipeline_integration(tmpdir):
     copyfile(INPUT_FILE, temp_input_path)
 
     pipeline = FinancialPipeline(
-        input_path=str(INPUT_FILE),
+        input_path=str(temp_input_path),
         output_path=str(temp_output_path)
     )
     pipeline.run()
