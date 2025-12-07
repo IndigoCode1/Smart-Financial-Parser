@@ -37,6 +37,9 @@ def load_merchant_db():
 def clean_merchant_name(raw: str) -> str:
     s = raw.upper().strip()
 
+    for separator in ['*', '.', '_']:
+        s = s.replace(separator, ' ')
+
     common_noise = [r'INC', r'LLC', r'LTD', r'CORP', 
                     r'US', r'USA', r'TECHNOLOGIES', r'NV', r'BV', 
                     r'WWW', r'CO', r'ORG']
@@ -50,12 +53,12 @@ def clean_merchant_name(raw: str) -> str:
     return " ".join(s.split())
 
 def parse_merchant(raw_merchant: str) -> str:
-    if not raw_merchant:
+    if not raw_merchant or not isinstance(raw_merchant, str):
         return "UNKNOWN"
     
     load_merchant_db()
 
-    cleaned_input= clean_merchant_name(raw_merchant)
+    cleaned_input = clean_merchant_name(raw_merchant)
 
     if not _CANONICAL_NAMES:
         return cleaned_input
