@@ -87,8 +87,7 @@ class FinancialPipeline:
             "Date": clean_date.isoformat(),
             "Merchant": clean_merchant,
             "Amount": clean_amount,
-            "Category": category,
-            "Original_Merchant": raw_merc 
+            "Category": category
         }
 
         return success, None
