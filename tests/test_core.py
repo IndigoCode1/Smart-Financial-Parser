@@ -3,6 +3,7 @@ from datetime import date
 from src.normalization.dates import parse_date
 from src.normalization.amounts import parse_amount
 from src.normalization.merchants import parse_merchant
+from src.normalization.categories import assign_category
 
 class TestDates:
     def test_iso_format(self):
@@ -64,6 +65,12 @@ class TestMerchants:
     def test_fuzzy_match_start(self):
         assert parse_merchant("UBER *TRIP") == "UBER"
 
+    def test_fuzzy_match_long(self):
+        assert parse_merchant("Uber Technologies") == "UBER"
+
+    def test_fuzzy_match_short(self):
+        assert parse_merchant("UBER EATS") == "UBER"
+
     def test_fuzzy_match_contains(self):
         assert parse_merchant("AMZN Mktp US") == "AMAZON"
 
@@ -105,3 +112,58 @@ class TestMerchants:
 
     def test_hyphenated_brands(self):
         assert parse_merchant("CHICK-FIL-A") == "CHICK-FIL-A"
+
+class TestCategories:
+    def test_fallback_dining_keyword(self):
+        assert assign_category("LOCAL COFFEE HOUSE") == "Dining"
+
+    def test_fallback_groceries_keyword(self):
+        assert assign_category("SARAH'S DELI AND SANDWICHES") == "Groceries"
+    
+    def test_fallback_gas_keyword(self):
+        assert assign_category("PETRO FUEL STOP") == "Gas"
+
+    def test_fallback_transport_keyword(self):
+        assert assign_category("JOE'S AUTOMOTIVE REPAIR") == "Transport"
+    
+    def test_fallback_shopping_keyword(self):
+        assert assign_category("VINTAGE CLOTHING BOUTIQUE") == "Shopping"
+        
+    def test_fallback_entertainment_keyword(self):
+        assert assign_category("MAIN STREET THEATRE") == "Entertainment"
+
+    def test_fallback_tech_keyword(self):
+        assert assign_category("CREATIVE DIGITAL MARKETING") == "Tech"
+    
+    def test_fallback_utilities_keyword(self):
+        assert assign_category("ACE PLUMBING SERVICES") == "Utilities"
+
+    def test_fallback_insurance_keyword(self):
+        assert assign_category("TRUSTED LIFE INSURANCE") == "Insurance"
+
+    def test_fallback_health_keyword(self):
+        assert assign_category("BRIGHT EYES OPTICAL") == "Health"
+    
+    def test_fallback_telecom_keyword(self):
+        assert assign_category("GIGABIT BROADBAND LLC") == "Telecom"
+
+    def test_fallback_finance_keyword(self):
+        assert assign_category("QUICK CASH LOAN COMPANY") == "Finance"
+
+    def test_fallback_education_keyword(self):
+        assert assign_category("TUTORING ACADEMY") == "Education"
+    
+    def test_no_match_fallback(self):
+        assert assign_category("GENERAL MERCHANDISE WAREHOUSE") == "Miscellaneous" 
+
+    def test_canonical_dining_priority(self):
+        assert assign_category("STARBUCKS") == "Dining"
+
+    def test_canonical_transport_priority(self):
+        assert assign_category("UBER") == "Transport"
+        
+    def test_canonical_finance_priority(self):
+        assert assign_category("CHASE") == "Finance"
+
+    def test_canonical_unconventional_category(self):
+        assert assign_category("AMAZON") == "Shopping"
