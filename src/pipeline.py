@@ -37,19 +37,19 @@ class FinancialPipeline:
         cols = [c.lower() for c in df.columns]
         mapping = {}
 
-        date_candidates = ['date', 'time', 'txn', 'timestamp', 'day']
+        date_candidates = ['date', 'dates', 'time', 'txn', 'timestamp', 'day']
         for col in df.columns:
             if any(candidate in col.lower() for candidate in date_candidates):
                 mapping['date'] = col
                 break
 
-        merchant_candidates = ['merchant', 'desc', 'vendor', 'payee']
+        merchant_candidates = ['merchant', 'merchants', 'desc', 'vendor', 'payee']
         for col in df.columns:
             if any(candidate in col.lower() for candidate in merchant_candidates):
                 mapping['merchant'] = col
                 break
 
-        amount_candidates = ['amount', 'amt', 'value', 'cost', 'total', 'price']
+        amount_candidates = ['amount', 'amounts', 'amt', 'value', 'cost', 'total', 'price']
         for col in df.columns:
             if any(candidate in col.lower() for candidate in amount_candidates):
                 mapping['amount'] = col
