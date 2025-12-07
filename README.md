@@ -72,7 +72,7 @@ In compliance with the hackathon rules, I declare the use of the following AI to
 
 * **Gemini:** Script scaffolding & Regex generation. I manually reviewed the 90/10 split in `generate_chaos.py` and fixed a syntax error in string concatenation that the AI missed.
 * **Gemini:** Unit Test generation. To validate, I read through every generated test case to ensure it actually tested the edge case described. 
-* **Gemini:** Helped me write this README.md file. I kept a log of my developer notes, and had it come up with the Markdown syntax and help clean up my log. I manually read through and typed everything I wanted into this README.md.
+* **Gemini:** Helped me write this README.md and DOCUMENTATION.md file. I kept a log of my developer notes, and had it come up with the Markdown syntax and help clean up my log. I manually read through and typed everything I wanted into this README.md and DOCUMENTATION.md.
 * **Gemini:** Bug fixes. When I came accross a bug I could not fix quickly, I had the AI help me fix it. I manually looked through the code and ran the tests to ensure that the bug was fixed and no new bugs/security issues were caused.
 * **ChatGPT / Grok:** Data Generation (Canonical Merchants, Tickers, and Categories). Proprietary or good open source merchant category lists are hard to find. I used AI to generate a baseline CSV for merchants and categories, then manually verified the merchants and categories. I also added and removed ticker symbols and aliases.
 * **ChatGPT:** Docstrings. Helped me clean up descriptions of my docstrings and I manually verified the descriptions.
