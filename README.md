@@ -39,7 +39,7 @@ Any transaction that does not match these categories falls back to **Miscellaneo
 
 ## Methodology
 ### 1. Tools & Technology Stack
-I prioritized tools that offered the highest leverage for parsing and matching without reinventing the wheel.
+I chose to use a modular Extract-Transform-Load (ETL) architecture. I prioritized tools that offered the highest leverage for parsing and matching without reinventing the wheel.
 
 * **Pandas:** Used for high-speed CSV ingestion and data manipulation. While Python's built-in csv module is lighter, I chose pandas for its robust handling of arbitrary column mapping and `NaN` values. There is also possibility of future extensibility for complex analytics with pandas.
 * **RapidFuzz:** Chosen for merchant normalization. It is faster than `Levenshtein` and allows for partial token matching (e.g., matching "Home Depot" to "The Home Depot").
