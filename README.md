@@ -81,16 +81,23 @@ In compliance with the hackathon rules, I declare the use of the following AI to
 ## Setup & Usage
 
 ### 1. Installation
-Ensure you have Python 3.8+ installed.
+Download the repo by cloning it.
+```bash
+git clone https://github.com/IndigoCode1/Smart-Financial-Parser.git
+```
+
+### 2. Setup
+Ensure you have Python 3.8+ installed and install the requirements.
 ```bash
 pip install -r requirements.txt
 ```
-### 2. Generate Test Data
+
+### 3. Generate Test Data
 Generate a fresh batch of "messy" data seeded for consistency.
 ```bash
 python scripts/generate_chaos.py
 ```
-### 3. Run the Pipeline
+### 4. Run the Pipeline
 You can run the pipeline using the default chaos data, or specify your own input/output paths via CLI arguments.
 * **Default Run:**
 ```bash
