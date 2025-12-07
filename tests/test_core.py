@@ -93,7 +93,7 @@ class TestMerchants:
         assert parse_merchant("AMZN") == "AMAZON"
 
     def test_multi_alias_support(self):
-        assert parse_merchant("AWS WEB SVS") == "AWS"
+        assert parse_merchant("AWS") == "AMAZON WEB SERVICES"
 
     def test_ticker_embedded_in_word(self):
         assert parse_merchant("TGIF DINING") != "TARGET"
