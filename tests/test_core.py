@@ -15,7 +15,7 @@ class TestDates:
     def test_human_readable(self):
         assert parse_date("Feb 26, 2025") == date(2025, 2, 26)
 
-    def reversed_test_human_readable(self):
+    def test_reversed_human_readable(self):
         assert parse_date("2025 27 feb") == date(2025, 2, 27)
 
     def test_dot_format(self):
