@@ -12,7 +12,7 @@ def test_pipeline_integration(tmpdir):
     temp_output_path = Path(tmpdir) / "test_output.csv"
     pipeline = FinancialPipeline(
         input_path=str(INPUT_FILE),
-        output_path=str(OUTPUT_FILE)
+        output_path=str(temp_output_path)
     )
     pipeline.run()
 
