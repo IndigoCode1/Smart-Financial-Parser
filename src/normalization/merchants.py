@@ -4,7 +4,8 @@ from pathlib import Path
 from typing import Dict, List, Optional
 from rapidfuzz import process, fuzz
 
-MERCHANT_FILE = Path("data/config/canonical_merchants.csv")
+BASE_DIR = Path(__file__).resolve().parents[2]
+MERCHANT_FILE = BASE_DIR / Path("data/config/canonical_merchants.csv")
 
 _CANONICAL_NAMES = []
 _CATEGORY_MAP = {}

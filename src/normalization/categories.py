@@ -4,7 +4,8 @@ from typing import Dict, List, Optional
 from src.normalization.merchants import get_category_map
 import re
 
-KEYWORDS_FILE = Path("data/config/keywords.csv")
+BASE_DIR = Path(__file__).resolve().parents[2]
+KEYWORDS_FILE = BASE_DIR / Path("data/config/keywords.csv")
 DEFAULT_CATEGORY = "Miscellaneous"
 
 _KEYWORD_RULES = {}
