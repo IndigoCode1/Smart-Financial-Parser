@@ -74,7 +74,34 @@ class TestMerchants:
         assert parse_merchant("Starbucks ☕️") == "STARBUCKS"
 
     def test_unknown_merchant(self):
-        assert parse_merchant("Joe's Coffee") == "JOE'S COFFEE"
+        assert parse_merchant("Joe's Coffee") == "JOES COFFEE"
 
     def test_empty_returns_unknown(self):
         assert parse_merchant("") == "UNKNOWN"
+
+    def test_ticker_swap_basic(self):
+        assert parse_merchant("WMT SUPERCENTER") == "WALMART"
+
+    def test_ticker_swap_standalone(self):
+        assert parse_merchant("AMZN") == "AMAZON"
+
+    def test_multi_alias_support(self):
+        assert parse_merchant("AWS WEB SVS") == "AWS"
+
+    def test_ticker_embedded_in_word(self):
+        assert parse_merchant("TGIF DINING") != "TARGET"
+
+    def test_similar_but_distinct_brands(self):
+        home = parse_merchant("HOME DEPOT")
+        office = parse_merchant("OFFICE DEPOT")
+        assert home != office
+
+    def test_short_names(self):
+        assert parse_merchant("BP GAS") == "BP"
+
+    def test_domain_names(self):
+        assert parse_merchant("WWW.AMAZON.COM") == "AMAZON"
+        assert parse_merchant("NETFLIX.COM") == "NETFLIX"
+
+    def test_hyphenated_brands(self):
+        assert parse_merchant("CHICK-FIL-A") == "CHICK-FIL-A"
