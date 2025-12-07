@@ -111,5 +111,5 @@ I prioritized Test-Driven Development (TDD) to ensure robustness. To run the tes
 ```bash
 pytest
 ```
-* **Status:** 51/51 Tests Passed
+* **Status:** 51/51 Tests Passed with 93% test coverage
 * **Coverage:** Dates, Amounts, Merchants, Categories, and End-to-End Pipeline.
