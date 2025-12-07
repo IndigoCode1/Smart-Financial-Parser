@@ -17,7 +17,7 @@ def test_pipeline_integration(tmpdir):
     pipeline.run()
 
     expected_df = pd.read_csv(EXPECTED_FILE)
-    actual_df = pd.read_csv(OUTPUT_FILE)
+    actual_df = pd.read_csv(temp_output_path)
 
     assert len(actual_df) == len(expected_df), "Mismatched row count"
     pd.testing.assert_frame_equal(

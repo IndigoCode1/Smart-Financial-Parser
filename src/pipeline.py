@@ -88,7 +88,7 @@ class FinancialPipeline:
             "Merchant": clean_merchant,
             "Amount": clean_amount,
             "Category": category,
-            "Original_Desc": raw_merc 
+            "Original_Merchant": raw_merc 
         }
 
         return success, None

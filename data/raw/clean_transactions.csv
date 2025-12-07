@@ -1,4 +1,4 @@
-Date,Merchant,Amount,Category,Original_Desc
+Date,Merchant,Amount,Category,Original_Merchant
 2025-01-12,AMAZON,17.38,Shopping,AMAZON *PRIME
 2025-10-22,AMAZON,213.85,Shopping,**AMAZON *PRIME**
 2025-01-07,STARBUCKS,212.66,Dining,STARBUCKS
