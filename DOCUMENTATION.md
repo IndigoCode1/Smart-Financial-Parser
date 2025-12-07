@@ -50,7 +50,7 @@ Categorization uses a deterministic "Waterfall" classifier to ensure speed and z
 1.  **Canonical Map:** If `merchants.py` identified "UBER", it is immediately tagged as **Transport**.
 2.  **Keyword Heuristics:** If the merchant is unknown, the system scans the raw name for keywords (e.g., "PLUMBING" maps to **Utilities**).
     * *Design Detail:* Regex word boundaries (`\b`) are used to ensure keywords are distinct words, preventing false positives (e.g., preventing "TITAN" from matching "IT").
-3.  **Default:** Transactions that fail both checks are classified as **Miscellaneous** or Local Business.
+3.  **Default:** Transactions that fail both checks are classified as **Miscellaneous**.
 
 ### Stage 4: Reporting
 * **Error Logging:** Rows that fail normalization are **not dropped**. They are written to `errors.log` (in CSV format) with a specific error reason, preserving data integrity and allowing for manual fixing.
@@ -62,7 +62,7 @@ Categorization uses a deterministic "Waterfall" classifier to ensure speed and z
 
 ### Configuration Files
 The system relies on external CSV configurations to allow logic updates without code changes:
-* **`canonical_merchants.csv`:** Contains the "Golden Source" of truth for merchant names and their default categories.
+* **`canonical_merchants.csv`:** Contains the "Source of Truth" for merchant names and their default categories.
 * **`keywords.csv`:** A fallback list of keywords used when the specific merchant is not recognized.
 
 ### Synthetic Data Generation (`scripts/generate_chaos.py`)
