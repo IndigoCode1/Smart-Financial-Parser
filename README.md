@@ -111,6 +111,7 @@ python main.py --input path/to/input.csv --output path/to/output.csv
 * **Default Input:** data/raw/generated_transactions.csv
 * **Default Output:** data/processed/normalized_data.csv
 * **Default Report Location:** data/processed/data_quality_report.txt
+* **Default Errors Log Location:** data/processed/errors.log
 
 ---
 
