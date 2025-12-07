@@ -84,3 +84,7 @@ def parse_merchant(raw_merchant: str) -> str:
 
     # Return Cleaned Name
     return cleaned_input
+
+def get_category_map() -> Dict[str, str]:
+    load_merchant_db()
+    return _CATEGORY_MAP
